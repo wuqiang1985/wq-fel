@@ -1,0 +1,24 @@
+{
+    "applicationName": "WQ-Front-end-library",
+    "tags": {
+        "allowUnknownTags": true
+    },
+    "source": {
+        "include": ["./src/"],
+        "includePattern": ".+\\.js(doc|x)?$",
+        "excludePattern": "(^|\\/|\\\\)_"
+    },
+    "plugins": [],
+    "templates": {
+        "cleverLinks": false,
+        "monospaceLinks": false,
+        "default": {
+            "outputSourceFiles": true
+        }
+    },
+    "opts": {
+        "template": "./node_modules/jaguarjs-jsdoc",
+        "encoding": "utf8",
+        "destination": "./docs/"
+    }
+}

@@ -1,0 +1,42 @@
+{
+  "name": "wq-fel",
+  "version": "0.1.0",
+  "description": "web front-end library",
+  "keywords": [
+    "utils",
+    "common",
+    "js"
+  ],
+  "main": "./dist/index.js",
+  "scripts": {
+    "prepublish": "rm -rf ./dist && babel src -d dist",
+    "lint": "eslint ./src/**/*.js",
+    "test:unit": "mocha --compilers js:babel-core/register --recursive",
+    "test": "./node_modules/.bin/istanbul cover ./node_modules/mocha/bin/_mocha -- --compilers js:babel-core/register --recursive",
+    "doc": "jsdoc -c ./conf.json -r -R README.md"
+  },
+  "author": "wuqiang",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wuqiang1985/wq-fel.git"
+  },
+  "homepage": "https://github.com/wuqiang1985/wq-fel",
+  "bugs": {
+    "url": "https://github.com/wuqiang1985/wq-fel/issues"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-preset-es2015": "^6.24.1",
+    "chai": "^3.5.0",
+    "eslint": "^3.19.0",
+    "eslint-config-airbnb": "^14.1.0",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^4.0.0",
+    "eslint-plugin-react": "^6.10.3",
+    "istanbul": "^1.1.0-alpha.1",
+    "jaguarjs-jsdoc": "^1.0.2",
+    "jsdoc": "^3.4.3",
+    "mocha": "^3.2.0"
+  }
+}
