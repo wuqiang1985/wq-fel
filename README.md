@@ -7,7 +7,7 @@ npm install wq-fel
 ```
 
 ## Usage
-```javascsript
+```javascript
 import { xx } from "wq-fel";
 ```
 
