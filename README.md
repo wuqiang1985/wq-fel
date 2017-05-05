@@ -2,3 +2,4 @@
 
 
 [![Build Status](https://travis-ci.org/wuqiang1985/wq-fel.svg?branch=master)](https://travis-ci.org/wuqiang1985/wq-fel)
+[![license](https://img.shields.io/github/license/wuqiang1985/wq-fel.svg)]()
