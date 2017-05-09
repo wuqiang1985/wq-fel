@@ -9,10 +9,13 @@
   ],
   "main": "./dist/index.js",
   "scripts": {
-    "prepublish": "rm -rf ./dist && babel src -d dist",
+    "prepublish": "npm run build",
+    "build": "npm run clean && npm run lint && npm test && npm run build:js && npm run doc",
+    "build:js":"babel src -d dist",
     "lint": "eslint ./src/**/*.js",
     "test:unit": "mocha --compilers js:babel-core/register --recursive",
     "test": "./node_modules/.bin/istanbul cover ./node_modules/mocha/bin/_mocha -- --compilers js:babel-core/register --recursive",
+    "clean": "rimraf ./dist & rimraf ./coverage & rimraf ./docs",
     "doc": "jsdoc -c ./conf.json -r -R README.md",
     "coverage": "cat ./coverage/lcov.info | coveralls"
   },
@@ -39,6 +42,7 @@
     "istanbul": "^1.1.0-alpha.1",
     "jaguarjs-jsdoc": "^1.0.2",
     "jsdoc": "^3.4.3",
-    "mocha": "^3.2.0"
+    "mocha": "^3.2.0",
+    "rimraf": "^2.6.1"
   }
 }
