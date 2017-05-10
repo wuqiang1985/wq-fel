@@ -1,7 +1,7 @@
-import * as string from './string';
+import string from './string';
 import * as number from './number';
 
-export {
+export default {
     string,
     number,
 };

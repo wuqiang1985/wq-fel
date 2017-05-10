@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>Source: string.js</title>
+    <title>Source: string/encodeHtml.js</title>
     
     
     <script src="scripts/prettify/prettify.js"></script>
@@ -93,7 +93,7 @@
     </ul>
 </div>
     <div class="main">
-        <h1 class="page-title" data-filename="string.js.html">Source: string.js</h1>
+        <h1 class="page-title" data-filename="string_encodeHtml.js.html">Source: string/encodeHtml.js</h1>
         
 
 
@@ -101,17 +101,22 @@
     <section>
         <article>
             <pre id="source-code" class="prettyprint source "><code>/**
- * 字符串扩展类
- * @namespace string
+ * 对目标字符串进行html编码
+ * @memberof string
+ * @method encodeHtml
+ * @param {string} source 目标字符串
+ * @returns {string} html编码后的字符串
  */
+function encodeHtml(source) {
+    return String(source)
+        .replace(/&amp;/g, '&amp;amp;')
+        .replace(/&lt;/g, '&amp;lt;')
+        .replace(/>/g, '&amp;gt;')
+        .replace(/"/g, '&amp;quot;')
+        .replace(/'/g, '&amp;#39;');
+}
 
-import encodeHtml from './string/encodeHtml';
-import decodeHtml from './string/decodeHtml';
-
-export default {
-    encodeHtml,
-    decodeHtml,
-};
+export default encodeHtml;
 </code></pre>
         </article>
     </section>
