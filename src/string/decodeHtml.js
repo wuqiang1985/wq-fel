@@ -1,7 +1,7 @@
 /**
  * 对目标字符串进行html解码
  * @memberof string
- * @method decodeHtml
+ * @method string#decodeHtml
  * @param {string} source 目标字符串
  * @returns {string} html解码后的字符串
  */

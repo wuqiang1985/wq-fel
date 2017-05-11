@@ -30,6 +30,7 @@ encodeHtml('xx');
 ## 模块列表
 * [string](src/string) 字符串扩展库
 * [number](src/number) 数字扩展库
+* [url](src/url) url扩展库
 
 
 

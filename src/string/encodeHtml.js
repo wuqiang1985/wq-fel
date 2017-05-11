@@ -1,7 +1,7 @@
 /**
  * 对目标字符串进行html编码
  * @memberof string
- * @method encodeHtml
+ * @method string#encodeHtml
  * @param {string} source 目标字符串
  * @returns {string} html编码后的字符串
  */

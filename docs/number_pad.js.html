@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>Source: string.js</title>
+    <title>Source: number/pad.js</title>
     
     
     <script src="scripts/prettify/prettify.js"></script>
@@ -120,7 +120,7 @@
     </ul>
 </div>
     <div class="main">
-        <h1 class="page-title" data-filename="string.js.html">Source: string.js</h1>
+        <h1 class="page-title" data-filename="number_pad.js.html">Source: number/pad.js</h1>
         
 
 
@@ -128,17 +128,26 @@
     <section>
         <article>
             <pre id="source-code" class="prettyprint source "><code>/**
- * 字符串扩展类
- * @namespace string
+ * 对目标数字进行0补齐处理
+ * @memberof number
+ * @method number#pad
+ * @param {number} source 需要处理的数字
+ * @param {number} [length] 需要输出的长度，默认为2
+ * @returns {string} 对目标数字进行0补齐处理后的结果
  */
+function pad(source, length = 2) {
+    let pre = '';
+    const negative = (source &lt; 0);
+    const string = String(Math.abs(source));
 
-import encodeHtml from './string/encodeHtml';
-import decodeHtml from './string/decodeHtml';
+    if (string.length &lt; length) {
+        pre = (new Array(length - string.length + 1)).join('0');
+    }
 
-export default {
-    encodeHtml,
-    decodeHtml,
-};
+    return (negative ? '-' : '') + pre + string;
+}
+
+export default pad;
 </code></pre>
         </article>
     </section>

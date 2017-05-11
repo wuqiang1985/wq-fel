@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>Source: string.js</title>
+    <title>Source: url/getRawParamByUrl.js</title>
     
     
     <script src="scripts/prettify/prettify.js"></script>
@@ -120,7 +120,7 @@
     </ul>
 </div>
     <div class="main">
-        <h1 class="page-title" data-filename="string.js.html">Source: string.js</h1>
+        <h1 class="page-title" data-filename="url_getRawParamByUrl.js.html">Source: url/getRawParamByUrl.js</h1>
         
 
 
@@ -128,17 +128,21 @@
     <section>
         <article>
             <pre id="source-code" class="prettyprint source "><code>/**
- * 字符串扩展类
- * @namespace string
+ * 获取url参数的原始值
+ * @memberof url
+ * @method url#getRawParamByUrl
+ * @param  {string} name 参数名
+ * @param  {string} [url]  页面url，默认取值：location.href
+ * @return {string} 参数的原始值
  */
+function getRawParamByUrl(name, url = location.href) {
+    const regex = new RegExp(`(\\?|#|&amp;)${name}=([^&amp;#\\?]*)(&amp;|#|$|\\?)`, 'i');
+    const match = url.match(regex);
 
-import encodeHtml from './string/encodeHtml';
-import decodeHtml from './string/decodeHtml';
+    return (!match ? '' : match[2]);
+}
 
-export default {
-    encodeHtml,
-    decodeHtml,
-};
+export default getRawParamByUrl;
 </code></pre>
         </article>
     </section>

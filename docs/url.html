@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>Namespace: number</title>
+    <title>Namespace: url</title>
     
     
     <script src="scripts/prettify/prettify.js"></script>
@@ -120,7 +120,7 @@
     </ul>
 </div>
     <div class="main">
-        <h1 class="page-title" data-filename="number.html">Namespace: number</h1>
+        <h1 class="page-title" data-filename="url.html">Namespace: url</h1>
         
 
 
@@ -129,7 +129,7 @@
     
 <header>
     <h2>
-    number
+    url
     </h2>
     
 </header>  
@@ -140,7 +140,7 @@
     
     
         
-            <div class="description">数字扩展库</div>
+            <div class="description">url扩展类</div>
         
         
         
@@ -192,14 +192,14 @@
             
 <dt>
     <div class="nameContainer">
-        <h4 class="name" id="comma">
+        <h4 class="name" id="getParamByUrl">
             
-            comma<span class="signature">(source, <span class="optional">length</span>)</span><span class="glyphicon glyphicon-circle-arrow-right"></span><span class="type-signature returnType">{<a href="string.html">string</a>}</span>
+            getParamByUrl<span class="signature">(name, <span class="optional">url</span>)</span><span class="glyphicon glyphicon-circle-arrow-right"></span><span class="type-signature returnType">{<a href="string.html">string</a>}</span>
         </h4>
     
         
         <div class="tag-source">
-            <a href="number_comma.js.html">number/comma.js</a>, <a href="number_comma.js.html#line1">line 1</a>
+            <a href="url_getParamByUrl.js.html">url/getParamByUrl.js</a>, <a href="url_getParamByUrl.js.html#line3">line 3</a>
         </div>
         
     </div>
@@ -210,7 +210,7 @@
     
     
     <div class="description">
-        为目标数字添加逗号分隔
+        获取url参数的编码后的值
     </div>
     
 
@@ -241,13 +241,13 @@
 	
         <tr>
             
-                <td class="name"><code>source</code></td>
+                <td class="name"><code>name</code></td>
             
             
             <td class="type">
             
                 
-<span class="param-type"><a href="number.html">number</a></span>
+<span class="param-type"><a href="string.html">string</a></span>
 
 
             
@@ -262,20 +262,20 @@
                         
                     
                 
-                需要处理的数字</td>
+                参数名</td>
         </tr>
 	
 	
 	
         <tr>
             
-                <td class="name"><code>length</code></td>
+                <td class="name"><code>url</code></td>
             
             
             <td class="type">
             
                 
-<span class="param-type"><a href="number.html">number</a></span>
+<span class="param-type"><a href="string.html">string</a></span>
 
 
             
@@ -292,7 +292,7 @@
                         
                     
                 
-                两次逗号之间的数字位数，默认为3位</td>
+                页面url，默认取值：location.href</td>
         </tr>
 	
 	
@@ -357,7 +357,7 @@
                         
                     
             </td>
-            <td class="description last">添加逗号分隔后的字符串</td>
+            <td class="description last">编码(encodeURIComponent)后参数的值</td>
         </tr>
     
     </tbody>
@@ -372,14 +372,14 @@
             
 <dt>
     <div class="nameContainer">
-        <h4 class="name" id="getRandomInt">
+        <h4 class="name" id="getRawParamByUrl">
             
-            getRandomInt<span class="signature">(min, max)</span><span class="glyphicon glyphicon-circle-arrow-right"></span><span class="type-signature returnType">{<a href="number.html">number</a>}</span>
+            getRawParamByUrl<span class="signature">(name, <span class="optional">url</span>)</span><span class="glyphicon glyphicon-circle-arrow-right"></span><span class="type-signature returnType">{<a href="string.html">string</a>}</span>
         </h4>
     
         
         <div class="tag-source">
-            <a href="number_getRandomInt.js.html">number/getRandomInt.js</a>, <a href="number_getRandomInt.js.html#line1">line 1</a>
+            <a href="url_getRawParamByUrl.js.html">url/getRawParamByUrl.js</a>, <a href="url_getRawParamByUrl.js.html#line1">line 1</a>
         </div>
         
     </div>
@@ -390,7 +390,7 @@
     
     
     <div class="description">
-        生成随机整数，范围是[min, max]
+        获取url参数的原始值
     </div>
     
 
@@ -421,181 +421,13 @@
 	
         <tr>
             
-                <td class="name"><code>min</code></td>
+                <td class="name"><code>name</code></td>
             
             
             <td class="type">
             
                 
-<span class="param-type"><a href="number.html">number</a></span>
-
-
-            
-            </td>
-            
-            
-            
-            <td class="description last">
-                
-                随机整数的最小值</td>
-        </tr>
-	
-	
-	
-        <tr>
-            
-                <td class="name"><code>max</code></td>
-            
-            
-            <td class="type">
-            
-                
-<span class="param-type"><a href="number.html">number</a></span>
-
-
-            
-            </td>
-            
-            
-            
-            <td class="description last">
-                
-                随机整数的最大值</td>
-        </tr>
-	
-	
-	</tbody>
-</table>
-    
-    
-    
-<dl class="details">
-    
-        
-    
-    
-    
-
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-</dl>
-
-    
-    
-
-    
-
-    
-    
-    
-    
-    
-    <h5>Returns:</h5>
-    
-
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Type</th>
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-    <tbody>
-    
-        <tr>
-            
-            <td class="type">
-            
-                        <a href="number.html">number</a>
-                        
-                    
-            </td>
-            <td class="description last">生成的随机整数</td>
-        </tr>
-    
-    </tbody>
-</table>
-
-    
-    
-    
-</dd>
-
-        
-            
-<dt>
-    <div class="nameContainer">
-        <h4 class="name" id="pad">
-            
-            pad<span class="signature">(source, <span class="optional">length</span>)</span><span class="glyphicon glyphicon-circle-arrow-right"></span><span class="type-signature returnType">{<a href="string.html">string</a>}</span>
-        </h4>
-    
-        
-        <div class="tag-source">
-            <a href="number_pad.js.html">number/pad.js</a>, <a href="number_pad.js.html#line1">line 1</a>
-        </div>
-        
-    </div>
-
-    
-</dt>
-<dd>
-    
-    
-    <div class="description">
-        对目标数字进行0补齐处理
-    </div>
-    
-
-    
-    
-    
-    
-    
-        
-
-<table class="params">
-    <thead>
-	<tr>
-		
-		<th>Name</th>
-		
-		
-		<th>Type</th>
-		
-		
-		
-		<th class="last">Description</th>
-	</tr>
-	</thead>
-	
-	<tbody>
-	
-	
-        <tr>
-            
-                <td class="name"><code>source</code></td>
-            
-            
-            <td class="type">
-            
-                
-<span class="param-type"><a href="number.html">number</a></span>
+<span class="param-type"><a href="string.html">string</a></span>
 
 
             
@@ -610,20 +442,20 @@
                         
                     
                 
-                需要处理的数字</td>
+                参数名</td>
         </tr>
 	
 	
 	
         <tr>
             
-                <td class="name"><code>length</code></td>
+                <td class="name"><code>url</code></td>
             
             
             <td class="type">
             
                 
-<span class="param-type"><a href="number.html">number</a></span>
+<span class="param-type"><a href="string.html">string</a></span>
 
 
             
@@ -640,7 +472,7 @@
                         
                     
                 
-                需要输出的长度，默认为2</td>
+                页面url，默认取值：location.href</td>
         </tr>
 	
 	
@@ -705,7 +537,7 @@
                         
                     
             </td>
-            <td class="description last">对目标数字进行0补齐处理后的结果</td>
+            <td class="description last">参数的原始值</td>
         </tr>
     
     </tbody>
