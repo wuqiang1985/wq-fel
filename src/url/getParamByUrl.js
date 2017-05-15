@@ -3,6 +3,7 @@ import getRawParamByUrl from './getRawParamByUrl';
 /**
  * 获取url参数的编码后的值
  * @memberof url
+ * @see url#getRawParamByUrl
  * @method url#getParamByUrl
  * @param  {string} name 参数名
  * @param  {string} [url]  页面url，默认取值：location.href
