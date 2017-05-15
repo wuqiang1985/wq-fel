@@ -1,5 +1,5 @@
 /**
- * url扩展类
+ * url扩展库
  * @namespace url
  */
 

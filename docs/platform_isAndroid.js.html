@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>Source: url/getParamByUrl.js</title>
+    <title>Source: platform/isAndroid.js</title>
     
     
     <script src="scripts/prettify/prettify.js"></script>
@@ -151,28 +151,24 @@
     </ul>
 </div>
     <div class="main">
-        <h1 class="page-title" data-filename="url_getParamByUrl.js.html">Source: url/getParamByUrl.js</h1>
+        <h1 class="page-title" data-filename="platform_isAndroid.js.html">Source: platform/isAndroid.js</h1>
         
 
 
     
     <section>
         <article>
-            <pre id="source-code" class="prettyprint source "><code>import getRawParamByUrl from './getRawParamByUrl';
-
-/**
- * 获取url参数的编码后的值
- * @memberof url
- * @method url#getParamByUrl
- * @param  {string} name 参数名
- * @param  {string} [url]  页面url，默认取值：location.href
- * @return {string} 编码(encodeURIComponent)后参数的值
+            <pre id="source-code" class="prettyprint source "><code>/**
+ * 是否为Android
+ * @memberof platform
+ * @readonly
+ * @instance
+ * @property {Boolean} isAndroid 是否为Android
+ * @returns {Boolean} 是否为Android
  */
-function getParamByUrl(name, url = location.href) {
-    return encodeURIComponent(getRawParamByUrl(name, url));
-}
+const isAndroid = /iphone/i.test(navigator.userAgent);
 
-export default getParamByUrl;
+export default isAndroid;
 </code></pre>
         </article>
     </section>
