@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>Source: number/getRandomInt.js</title>
+    <title>Source: date/formatDate.js</title>
     
     
     <script src="scripts/prettify/prettify.js"></script>
@@ -178,26 +178,71 @@
     </ul>
 </div>
     <div class="main">
-        <h1 class="page-title" data-filename="number_getRandomInt.js.html">Source: number/getRandomInt.js</h1>
+        <h1 class="page-title" data-filename="date_formatDate.js.html">Source: date/formatDate.js</h1>
         
 
 
     
     <section>
         <article>
-            <pre id="source-code" class="prettyprint source "><code>/**
- * 生成随机整数，范围是[min, max]
- * @memberof number
- * @method number#getRandomInt
- * @param   {number} min    随机整数的最小值
- * @param   {number} max    随机整数的最大值
- * @return  {number}        生成的随机整数
+            <pre id="source-code" class="prettyprint source "><code>import pad from '../number/pad';
+
+/**
+ * 日期格式化
+ * @memberof date
+ * @method date#formatDate
+ * @param {Date} source 日期对象
+ * @param {string} [pattern] 日期格式化模式，默认为yyyy/MM/dd
+ * @example
+ * &lt;b>格式表达式，变量含义：&lt;/b>&lt;br>&lt;br>
+ * hh: 带 0 补齐的两位 12 进制时表示&lt;br>
+ * h: 不带 0 补齐的 12 进制时表示&lt;br>
+ * HH: 带 0 补齐的两位 24 进制时表示&lt;br>
+ * H: 不带 0 补齐的 24 进制时表示&lt;br>
+ * mm: 带 0 补齐两位分表示&lt;br>
+ * m: 不带 0 补齐分表示&lt;br>
+ * ss: 带 0 补齐两位秒表示&lt;br>
+ * s: 不带 0 补齐秒表示&lt;br>
+ * yyyy: 带 0 补齐的四位年表示&lt;br>
+ * yy: 带 0 补齐的两位年表示&lt;br>
+ * MM: 带 0 补齐的两位月表示&lt;br>
+ * M: 不带 0 补齐的月表示&lt;br>
+ * dd: 带 0 补齐的两位日表示&lt;br>
+ * d: 不带 0 补齐的日表示
+ * @returns {string} 格式化后的字符串
  */
-function getRandomInt(min, max) {
-    return Math.floor(Math.random() * (max - min + 1) + min);
+function formatDate(source, pattern = 'yyyy/MM/dd') {
+    let result = pattern;
+    const year = source.getFullYear();
+    const month = source.getMonth() + 1;
+    const date2 = source.getDate();
+    const hours = source.getHours();
+    const minutes = source.getMinutes();
+    const seconds = source.getSeconds();
+    const replacer = function (patternPart, val) {
+        result = result.replace(patternPart, val);
+    };
+
+    replacer(/yyyy/g, pad(year, 4));
+    replacer(/yy/g, pad(parseInt(year.toString().slice(2), 10), 2));
+    replacer(/MM/g, pad(month, 2));
+    replacer(/M/g, month);
+    replacer(/dd/g, pad(date2, 2));
+    replacer(/d/g, date2);
+
+    replacer(/HH/g, pad(hours, 2));
+    replacer(/H/g, hours);
+    replacer(/hh/g, pad(hours % 12, 2));
+    replacer(/h/g, hours % 12);
+    replacer(/mm/g, pad(minutes, 2));
+    replacer(/m/g, minutes);
+    replacer(/ss/g, pad(seconds, 2));
+    replacer(/s/g, seconds);
+
+    return result;
 }
 
-export default getRandomInt;
+export default formatDate;
 </code></pre>
         </article>
     </section>

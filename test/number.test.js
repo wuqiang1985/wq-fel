@@ -6,7 +6,7 @@ import chai from 'chai';
 const expect = chai.expect;
 
 describe('number扩展库测试', function() {
-    it('comma:默认参数', function() {
+    it('comma:默认参数，隔3位加逗号', function() {
         expect(comma(6666666)).to.be.equal('6,666,666');
     });
 

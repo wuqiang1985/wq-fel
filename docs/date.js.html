@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>Source: number/getRandomInt.js</title>
+    <title>Source: date.js</title>
     
     
     <script src="scripts/prettify/prettify.js"></script>
@@ -178,7 +178,7 @@
     </ul>
 </div>
     <div class="main">
-        <h1 class="page-title" data-filename="number_getRandomInt.js.html">Source: number/getRandomInt.js</h1>
+        <h1 class="page-title" data-filename="date.js.html">Source: date.js</h1>
         
 
 
@@ -186,18 +186,15 @@
     <section>
         <article>
             <pre id="source-code" class="prettyprint source "><code>/**
- * 生成随机整数，范围是[min, max]
- * @memberof number
- * @method number#getRandomInt
- * @param   {number} min    随机整数的最小值
- * @param   {number} max    随机整数的最大值
- * @return  {number}        生成的随机整数
+ * 日期扩展库
+ * @namespace date
  */
-function getRandomInt(min, max) {
-    return Math.floor(Math.random() * (max - min + 1) + min);
-}
 
-export default getRandomInt;
+import format from './date/formatDate';
+
+export default {
+    format,
+};
 </code></pre>
         </article>
     </section>
