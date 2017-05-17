@@ -33,6 +33,7 @@ encodeHtml('xx');
 * [platform](src/platform) 平台扩展库
 * [string](src/string) 字符串扩展库
 * [url](src/url) url扩展库
+* [validation](src/validation) 验证扩展库
 
 
 
