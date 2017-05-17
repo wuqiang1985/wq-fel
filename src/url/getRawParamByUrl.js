@@ -4,13 +4,13 @@
  * @method url#getRawParamByUrl
  * @param  {string} name 参数名
  * @param  {string} [url]  页面url，默认取值：location.href
- * @return {string} 参数的原始值
+ * @return {string|null} 参数的原始值，为获取到返回null
  */
 function getRawParamByUrl(name, url = location.href) {
     const regex = new RegExp(`(\\?|#|&)${name}=([^&#\\?]*)(&|#|$|\\?)`, 'i');
     const match = url.match(regex);
 
-    return (!match ? '' : match[2]);
+    return (!match ? null : match[2]);
 }
 
 export default getRawParamByUrl;

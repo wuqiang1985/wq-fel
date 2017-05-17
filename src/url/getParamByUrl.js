@@ -7,10 +7,16 @@ import getRawParamByUrl from './getRawParamByUrl';
  * @method url#getParamByUrl
  * @param  {string} name 参数名
  * @param  {string} [url]  页面url，默认取值：location.href
- * @return {string} 编码(encodeURIComponent)后参数的值
+ * @return {string|null} 编码(encodeURIComponent)后参数的值，未获取到返回null
  */
 function getParamByUrl(name, url = location.href) {
-    return encodeURIComponent(getRawParamByUrl(name, url));
+    const value = getRawParamByUrl(name, url);
+
+    if (typeof value === 'string') {
+        return encodeURIComponent(value);
+    }
+
+    return null;
 }
 
 export default getParamByUrl;

@@ -3,12 +3,12 @@
  * @namespace url
  */
 
-import getParamByUrl from './url/getParamByUrl';
-import getRawParamByUrl from './url/getRawParamByUrl';
-import parseUrl from './url/parseUrl';
+import getParam from './url/getParamByUrl';
+import getRawParam from './url/getRawParamByUrl';
+import parse from './url/parseUrl';
 
 export default {
-    getParamByUrl,
-    getRawParamByUrl,
-    parseUrl,
+    getParam,
+    getRawParam,
+    parse,
 };

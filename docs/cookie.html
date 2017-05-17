@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>Namespace: string</title>
+    <title>Namespace: cookie</title>
     
     
     <script src="scripts/prettify/prettify.js"></script>
@@ -236,7 +236,7 @@
     </ul>
 </div>
     <div class="main">
-        <h1 class="page-title" data-filename="string.html">Namespace: string</h1>
+        <h1 class="page-title" data-filename="cookie.html">Namespace: cookie</h1>
         
 
 
@@ -245,7 +245,7 @@
     
 <header>
     <h2>
-    string
+    cookie
     </h2>
     
 </header>  
@@ -256,7 +256,7 @@
     
     
         
-            <div class="description">字符串扩展库</div>
+            <div class="description">cooikie扩展库</div>
         
         
         
@@ -308,14 +308,14 @@
             
 <dt>
     <div class="nameContainer">
-        <h4 class="name" id="decodeHtml">
+        <h4 class="name" id="getCookie">
             
-            decodeHtml<span class="signature">(source)</span><span class="glyphicon glyphicon-circle-arrow-right"></span><span class="type-signature returnType">{<a href="string.html">string</a>}</span>
+            getCookie<span class="signature">(key)</span><span class="glyphicon glyphicon-circle-arrow-right"></span><span class="type-signature returnType">{<a href="string.html">string</a>|null}</span>
         </h4>
     
         
         <div class="tag-source">
-            <a href="string_decodeHtml.js.html">string/decodeHtml.js</a>, <a href="string_decodeHtml.js.html#line1">line 1</a>
+            <a href="cookie_getCookie.js.html">cookie/getCookie.js</a>, <a href="cookie_getCookie.js.html#line3">line 3</a>
         </div>
         
     </div>
@@ -326,7 +326,7 @@
     
     
     <div class="description">
-        对目标字符串进行html解码
+        获取cookie值，用decodeURIComponent解码
     </div>
     
 
@@ -357,7 +357,7 @@
 	
         <tr>
             
-                <td class="name"><code>source</code></td>
+                <td class="name"><code>key</code></td>
             
             
             <td class="type">
@@ -373,7 +373,7 @@
             
             <td class="description last">
                 
-                目标字符串</td>
+                cookie名</td>
         </tr>
 	
 	
@@ -435,10 +435,13 @@
             <td class="type">
             
                         <a href="string.html">string</a>
+                         | 
+                    
+                        null
                         
                     
             </td>
-            <td class="description last">html解码后的字符串</td>
+            <td class="description last">cookie值，进行decodeURIComponent解码，未获取到返回null</td>
         </tr>
     
     </tbody>
@@ -453,14 +456,14 @@
             
 <dt>
     <div class="nameContainer">
-        <h4 class="name" id="encodeHtml">
+        <h4 class="name" id="getRawCookie">
             
-            encodeHtml<span class="signature">(source)</span><span class="glyphicon glyphicon-circle-arrow-right"></span><span class="type-signature returnType">{<a href="string.html">string</a>}</span>
+            getRawCookie<span class="signature">(key)</span><span class="glyphicon glyphicon-circle-arrow-right"></span><span class="type-signature returnType">{<a href="string.html">string</a>|null}</span>
         </h4>
     
         
         <div class="tag-source">
-            <a href="string_encodeHtml.js.html">string/encodeHtml.js</a>, <a href="string_encodeHtml.js.html#line1">line 1</a>
+            <a href="cookie_getRawCookie.js.html">cookie/getRawCookie.js</a>, <a href="cookie_getRawCookie.js.html#line3">line 3</a>
         </div>
         
     </div>
@@ -471,7 +474,7 @@
     
     
     <div class="description">
-        对目标字符串进行html编码
+        获取cookie原始值
     </div>
     
 
@@ -502,7 +505,7 @@
 	
         <tr>
             
-                <td class="name"><code>source</code></td>
+                <td class="name"><code>key</code></td>
             
             
             <td class="type">
@@ -518,7 +521,7 @@
             
             <td class="description last">
                 
-                目标字符串</td>
+                cookie名</td>
         </tr>
 	
 	
@@ -580,15 +583,530 @@
             <td class="type">
             
                         <a href="string.html">string</a>
+                         | 
+                    
+                        null
                         
                     
             </td>
-            <td class="description last">html编码后的字符串</td>
+            <td class="description last">cookie原始值，未获取到返回null</td>
         </tr>
     
     </tbody>
 </table>
 
+    
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <div class="nameContainer">
+        <h4 class="name" id="removeCookie">
+            
+            removeCookie<span class="signature">(key, <span class="optional">options</span>)</span>
+        </h4>
+    
+        
+        <div class="tag-source">
+            <a href="cookie_removeCookie.js.html">cookie/removeCookie.js</a>, <a href="cookie_removeCookie.js.html#line3">line 3</a>
+        </div>
+        
+    </div>
+
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        删除cookie值
+    </div>
+    
+
+    
+    
+    
+    
+    
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>key</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type"><a href="string.html">string</a></span>
+
+
+            
+            </td>
+            
+            
+            
+            <td class="description last">
+                
+                    
+                    
+                        
+                    
+                
+                cookie名</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>options</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+            
+            
+            
+            <td class="description last">
+                
+                    
+                        <span class="optional">optional</span>
+                    
+                    
+                        
+                    
+                
+                默认为空对象
+cookie选项值，e.g. {path：string, domain:string, serue:boolean}</td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <div class="nameContainer">
+        <h4 class="name" id="setCookie">
+            
+            setCookie<span class="signature">(key, value, <span class="optional">options</span>)</span>
+        </h4>
+    
+        
+        <div class="tag-source">
+            <a href="cookie_setCookie.js.html">cookie/setCookie.js</a>, <a href="cookie_setCookie.js.html#line3">line 3</a>
+        </div>
+        
+    </div>
+
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        设置cookie值，对cookie值进行encodeURIComponent
+    </div>
+    
+
+    
+    
+    
+    
+    
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>key</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type"><a href="string.html">string</a></span>
+
+
+            
+            </td>
+            
+            
+            
+            <td class="description last">
+                
+                    
+                    
+                        
+                    
+                
+                cookie名</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>value</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type"><a href="string.html">string</a></span>
+
+
+            
+            </td>
+            
+            
+            
+            <td class="description last">
+                
+                    
+                    
+                        
+                    
+                
+                cookie值</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>options</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+            
+            
+            
+            <td class="description last">
+                
+                    
+                        <span class="optional">optional</span>
+                    
+                    
+                        
+                    
+                
+                默认为空对象
+cookie选项值，e.g. {path：string, expires:number(毫秒值), domain:string, serue:boolean}</td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <div class="nameContainer">
+        <h4 class="name" id="setRawCookie">
+            
+            setRawCookie<span class="signature">(key, value, <span class="optional">options</span>)</span>
+        </h4>
+    
+        
+        <div class="tag-source">
+            <a href="cookie_setRawCookie.js.html">cookie/setRawCookie.js</a>, <a href="cookie_setRawCookie.js.html#line3">line 3</a>
+        </div>
+        
+    </div>
+
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        设置cookie原始值
+    </div>
+    
+
+    
+    
+    
+    
+    
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>key</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type"><a href="string.html">string</a></span>
+
+
+            
+            </td>
+            
+            
+            
+            <td class="description last">
+                
+                    
+                    
+                        
+                    
+                
+                cookie名</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>value</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type"><a href="string.html">string</a></span>
+
+
+            
+            </td>
+            
+            
+            
+            <td class="description last">
+                
+                    
+                    
+                        
+                    
+                
+                cookie值</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>options</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+            
+            
+            
+            <td class="description last">
+                
+                    
+                        <span class="optional">optional</span>
+                    
+                    
+                        
+                    
+                
+                默认为空对象
+cookie选项值，e.g. {path：string, expires:number(毫秒值), domain:string, serue:boolean}</td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
     
     
     

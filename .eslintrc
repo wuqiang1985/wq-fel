@@ -7,6 +7,9 @@
     "rules": {
         "linebreak-style": "off",
         "no-mixed-operators": "off",
+        "no-control-regex": "off",
+        "no-useless-escape": "off",
+        "no-param-reassign": ["error", { "props": false }],
         "indent": ["error", 4]
     }
 }

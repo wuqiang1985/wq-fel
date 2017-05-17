@@ -3,8 +3,8 @@
  * @namespace date
  */
 
-import formatDate from './date/formatDate';
+import format from './date/formatDate';
 
 export default {
-    formatDate,
+    format,
 };
