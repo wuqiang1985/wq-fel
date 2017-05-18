@@ -9,7 +9,9 @@
         "no-mixed-operators": "off",
         "no-control-regex": "off",
         "no-useless-escape": "off",
+        "no-restricted-syntax": "off",
         "no-param-reassign": ["error", { "props": false }],
+        "no-eval": "off",
         "indent": ["error", 4]
     }
 }
