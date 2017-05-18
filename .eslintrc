@@ -12,6 +12,7 @@
         "no-restricted-syntax": "off",
         "no-param-reassign": ["error", { "props": false }],
         "no-eval": "off",
+        "array-callback-return": "off",
         "indent": ["error", 4]
     }
 }
