@@ -3,7 +3,7 @@
  * @memberof number
  * @method number#comma
  * @param {number} source 需要处理的数字
- * @param {number} [length] 两次逗号之间的数字位数，默认为3位
+ * @param {number} [length=3] 两次逗号之间的数字位数
  * @returns {string} 添加逗号分隔后的字符串
  */
 function comma(source, length = 3) {

@@ -3,7 +3,7 @@
  * @memberof url
  * @method url#parseUrl
  * @param  {string} url url链接字符串
- * @return {Object} url解析后的json对象
+ * @return {object} url解析后的json对象
  */
 function parseUrl(url) {
     const match = url.match(/^(https?:)\/\/(([^:/?#]*)(?::([0-9]+))?)([/]{0,1}[^?#]*)(\?[^#]*|)(#.*|)$/);

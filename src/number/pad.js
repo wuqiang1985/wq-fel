@@ -3,7 +3,7 @@
  * @memberof number
  * @method number#pad
  * @param {number} source 需要处理的数字
- * @param {number} [length] 需要输出的长度，默认为2
+ * @param {number} [length=2] 需要输出的长度
  * @returns {string} 对目标数字进行0补齐处理后的结果
  */
 function pad(source, length = 2) {

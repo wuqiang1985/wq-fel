@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>Namespace: url</title>
+    <title>Namespace: ajax</title>
     
     
     <script src="scripts/prettify/prettify.js"></script>
@@ -271,7 +271,7 @@
     </ul>
 </div>
     <div class="main">
-        <h1 class="page-title" data-filename="url.html">Namespace: url</h1>
+        <h1 class="page-title" data-filename="ajax.html">Namespace: ajax</h1>
         
 
 
@@ -280,7 +280,7 @@
     
 <header>
     <h2>
-    url
+    ajax
     </h2>
     
 </header>  
@@ -291,7 +291,7 @@
     
     
         
-            <div class="description">url扩展库</div>
+            <div class="description">ajax扩展库</div>
         
         
         
@@ -343,14 +343,14 @@
             
 <dt>
     <div class="nameContainer">
-        <h4 class="name" id="getParamByUrl">
+        <h4 class="name" id="get">
             
-            getParamByUrl<span class="signature">(name, <span class="optional">url</span>)</span><span class="glyphicon glyphicon-circle-arrow-right"></span><span class="type-signature returnType">{<a href="string.html">string</a>|null}</span>
+            get<span class="signature">(url, <span class="optional">data</span>, <span class="optional">isCache</span>)</span><span class="glyphicon glyphicon-circle-arrow-right"></span><span class="type-signature returnType">{Promise}</span>
         </h4>
     
         
         <div class="tag-source">
-            <a href="url_getParamByUrl.js.html">url/getParamByUrl.js</a>, <a href="url_getParamByUrl.js.html#line3">line 3</a>
+            <a href="ajax_get.js.html">ajax/get.js</a>, <a href="ajax_get.js.html#line3">line 3</a>
         </div>
         
     </div>
@@ -361,7 +361,7 @@
     
     
     <div class="description">
-        获取url参数的编码后的值
+        发送ajax GET请求
     </div>
     
 
@@ -394,38 +394,6 @@
 	
         <tr>
             
-                <td class="name"><code>name</code></td>
-            
-            
-            <td class="type">
-            
-                
-<span class="param-type"><a href="string.html">string</a></span>
-
-
-            
-            </td>
-            
-            
-                <td class="default">
-                
-                </td>
-            
-            
-            <td class="description last">
-                
-                    
-                    
-                        
-                    
-                
-                参数名</td>
-        </tr>
-	
-	
-	
-        <tr>
-            
                 <td class="name"><code>url</code></td>
             
             
@@ -441,7 +409,42 @@
             
                 <td class="default">
                 
-                    location.href
+                </td>
+            
+            
+            <td class="description last">
+                
+                    
+                    
+                        
+                    
+                
+                请求的url</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>data</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type"><a href="string.html">string</a></span>
+|
+
+<span class="param-type">object</span>
+
+
+            
+            </td>
+            
+            
+                <td class="default">
+                
+                    null
                 
                 </td>
             
@@ -455,154 +458,21 @@
                         
                     
                 
-                页面url</td>
+                请求参数，e.g. string为查询字符串：lang=en&area=hk;
+object: json对象，最终会被转化为查询字符串</td>
         </tr>
 	
-	
-	</tbody>
-</table>
-    
-    
-    
-<dl class="details">
-    
-        
-    
-    
-    
-
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    <dt class="tag-see">See:</dt>
-    <dd class="tag-see">
-        <ul>
-            <li><a href="url.html#getRawParamByUrl">url#getRawParamByUrl</a></li>
-        </ul>
-    </dd>
-    
-    
-    
-</dl>
-
-    
-    
-
-    
-
-    
-    
-    
-    
-    
-    <h5>Returns:</h5>
-    
-
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Type</th>
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-    <tbody>
-    
-        <tr>
-            
-            <td class="type">
-            
-                        <a href="string.html">string</a>
-                         | 
-                    
-                        null
-                        
-                    
-            </td>
-            <td class="description last">编码(encodeURIComponent)后参数的值，未获取到返回null</td>
-        </tr>
-    
-    </tbody>
-</table>
-
-    
-    
-    
-</dd>
-
-        
-            
-<dt>
-    <div class="nameContainer">
-        <h4 class="name" id="getRawParamByUrl">
-            
-            getRawParamByUrl<span class="signature">(name, <span class="optional">url</span>)</span><span class="glyphicon glyphicon-circle-arrow-right"></span><span class="type-signature returnType">{<a href="string.html">string</a>|null}</span>
-        </h4>
-    
-        
-        <div class="tag-source">
-            <a href="url_getRawParamByUrl.js.html">url/getRawParamByUrl.js</a>, <a href="url_getRawParamByUrl.js.html#line1">line 1</a>
-        </div>
-        
-    </div>
-
-    
-</dt>
-<dd>
-    
-    
-    <div class="description">
-        获取url参数的原始值
-    </div>
-    
-
-    
-    
-    
-    
-    
-        
-
-<table class="params">
-    <thead>
-	<tr>
-		
-		<th>Name</th>
-		
-		
-		<th>Type</th>
-		
-		
-		<th>Default</th>
-		
-		
-		<th class="last">Description</th>
-	</tr>
-	</thead>
-	
-	<tbody>
 	
 	
         <tr>
             
-                <td class="name"><code>name</code></td>
+                <td class="name"><code>isCache</code></td>
             
             
             <td class="type">
             
                 
-<span class="param-type"><a href="string.html">string</a></span>
+<span class="param-type">boolean</span>
 
 
             
@@ -611,39 +481,7 @@
             
                 <td class="default">
                 
-                </td>
-            
-            
-            <td class="description last">
-                
-                    
-                    
-                        
-                    
-                
-                参数名</td>
-        </tr>
-	
-	
-	
-        <tr>
-            
-                <td class="name"><code>url</code></td>
-            
-            
-            <td class="type">
-            
-                
-<span class="param-type"><a href="string.html">string</a></span>
-
-
-            
-            </td>
-            
-            
-                <td class="default">
-                
-                    location.href
+                    false
                 
                 </td>
             
@@ -657,7 +495,7 @@
                         
                     
                 
-                页面url</td>
+                是否需要缓存</td>
         </tr>
 	
 	
@@ -718,14 +556,11 @@
             
             <td class="type">
             
-                        <a href="string.html">string</a>
-                         | 
-                    
-                        null
+                        Promise
                         
                     
             </td>
-            <td class="description last">参数的原始值，为获取到返回null</td>
+            <td class="description last">发送请求的Promise对象</td>
         </tr>
     
     </tbody>
@@ -734,20 +569,50 @@
     
     
     
+        <h5>Example</h5>
+        
+
+    
+    <pre class="prettyprint"><code>// 简单调用
+get('http://www.joox.com/cgi').then(res => {
+    successHandler(res);
+}).catch(error => {
+    failureHandler(error);
+});
+
+// 带参数调用
+get('http://www.joox.com/cgi', {
+    lang: 'en',
+    area: 'hk',
+}).then(res => {
+    successHandler(res);
+}).catch(error => {
+    failureHandler(error);
+});
+
+// 带参数调用
+get('http://www.joox.com/cgi', 'lang=en&area=hk').then(res => {
+    successHandler(res);
+}).catch(error => {
+    failureHandler(error);
+});</code></pre>
+    
+
+    
 </dd>
 
         
             
 <dt>
     <div class="nameContainer">
-        <h4 class="name" id="jsonToQuery">
+        <h4 class="name" id="getJSON">
             
-            jsonToQuery<span class="signature">(obj)</span><span class="glyphicon glyphicon-circle-arrow-right"></span><span class="type-signature returnType">{<a href="string.html">string</a>}</span>
+            getJSON<span class="signature">(url, <span class="optional">data</span>, <span class="optional">isCache</span>)</span><span class="glyphicon glyphicon-circle-arrow-right"></span><span class="type-signature returnType">{Promise}</span>
         </h4>
     
         
         <div class="tag-source">
-            <a href="url_jsonToQuery.js.html">url/jsonToQuery.js</a>, <a href="url_jsonToQuery.js.html#line1">line 1</a>
+            <a href="ajax_getJSON.js.html">ajax/getJSON.js</a>, <a href="ajax_getJSON.js.html#line3">line 3</a>
         </div>
         
     </div>
@@ -758,7 +623,493 @@
     
     
     <div class="description">
-        将JSON转化为querystrig形式
+        发送ajax GET请求JSON
+    </div>
+    
+
+    
+    
+    
+    
+    
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		<th>Default</th>
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>url</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type"><a href="string.html">string</a></span>
+
+
+            
+            </td>
+            
+            
+                <td class="default">
+                
+                </td>
+            
+            
+            <td class="description last">
+                
+                    
+                    
+                        
+                    
+                
+                请求的url</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>data</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type"><a href="string.html">string</a></span>
+|
+
+<span class="param-type">object</span>
+
+
+            
+            </td>
+            
+            
+                <td class="default">
+                
+                    null
+                
+                </td>
+            
+            
+            <td class="description last">
+                
+                    
+                        <span class="optional">optional</span>
+                    
+                    
+                        
+                    
+                
+                请求参数，e.g. string为查询字符串：lang=en&area=hk;
+object: json对象，最终会被转化为查询字符串</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>isCache</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+
+
+            
+            </td>
+            
+            
+                <td class="default">
+                
+                    false
+                
+                </td>
+            
+            
+            <td class="description last">
+                
+                    
+                        <span class="optional">optional</span>
+                    
+                    
+                        
+                    
+                
+                是否需要缓存</td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Type</th>
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+    <tbody>
+    
+        <tr>
+            
+            <td class="type">
+            
+                        Promise
+                        
+                    
+            </td>
+            <td class="description last">发送请求的Promise对象</td>
+        </tr>
+    
+    </tbody>
+</table>
+
+    
+    
+    
+        <h5>Example</h5>
+        
+
+    
+    <pre class="prettyprint"><code>// 简单调用，可参考get方法
+getJSON('http://www.joox.com/cgi').then(res => {
+    successHandler(res);
+}).catch(error => {
+    failureHandler(error);
+});</code></pre>
+    
+
+    
+</dd>
+
+        
+            
+<dt>
+    <div class="nameContainer">
+        <h4 class="name" id="getScript">
+            
+            getScript<span class="signature">(url, <span class="optional">data</span>, <span class="optional">isCache</span>)</span><span class="glyphicon glyphicon-circle-arrow-right"></span><span class="type-signature returnType">{Promise}</span>
+        </h4>
+    
+        
+        <div class="tag-source">
+            <a href="ajax_getScript.js.html">ajax/getScript.js</a>, <a href="ajax_getScript.js.html#line3">line 3</a>
+        </div>
+        
+    </div>
+
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        发送ajax GET请求script并执行
+    </div>
+    
+
+    
+    
+    
+    
+    
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		<th>Default</th>
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>url</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type"><a href="string.html">string</a></span>
+
+
+            
+            </td>
+            
+            
+                <td class="default">
+                
+                </td>
+            
+            
+            <td class="description last">
+                
+                    
+                    
+                        
+                    
+                
+                请求的url</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>data</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type"><a href="string.html">string</a></span>
+|
+
+<span class="param-type">object</span>
+
+
+            
+            </td>
+            
+            
+                <td class="default">
+                
+                    null
+                
+                </td>
+            
+            
+            <td class="description last">
+                
+                    
+                        <span class="optional">optional</span>
+                    
+                    
+                        
+                    
+                
+                请求参数，e.g. string为查询字符串：lang=en&area=hk;
+object: json对象，最终会被转化为查询字符串</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>isCache</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+
+
+            
+            </td>
+            
+            
+                <td class="default">
+                
+                    false
+                
+                </td>
+            
+            
+            <td class="description last">
+                
+                    
+                        <span class="optional">optional</span>
+                    
+                    
+                        
+                    
+                
+                是否需要缓存</td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Type</th>
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+    <tbody>
+    
+        <tr>
+            
+            <td class="type">
+            
+                        Promise
+                        
+                    
+            </td>
+            <td class="description last">发送请求的Promise对象</td>
+        </tr>
+    
+    </tbody>
+</table>
+
+    
+    
+    
+        <h5>Example</h5>
+        
+
+    
+    <pre class="prettyprint"><code>// 简单调用，可参考get方法
+getScript('http://www.joox.com/cgi');</code></pre>
+    
+
+    
+</dd>
+
+        
+            
+<dt>
+    <div class="nameContainer">
+        <h4 class="name" id="post">
+            
+            post<span class="signature">(url, data)</span><span class="glyphicon glyphicon-circle-arrow-right"></span><span class="type-signature returnType">{Promise}</span>
+        </h4>
+    
+        
+        <div class="tag-source">
+            <a href="ajax_post.js.html">ajax/post.js</a>, <a href="ajax_post.js.html#line3">line 3</a>
+        </div>
+        
+    </div>
+
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        发送ajax POST请求
     </div>
     
 
@@ -789,7 +1140,222 @@
 	
         <tr>
             
-                <td class="name"><code>obj</code></td>
+                <td class="name"><code>url</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type"><a href="string.html">string</a></span>
+
+
+            
+            </td>
+            
+            
+            
+            <td class="description last">
+                
+                请求的url</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>data</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type"><a href="string.html">string</a></span>
+|
+
+<span class="param-type">object</span>
+
+
+            
+            </td>
+            
+            
+            
+            <td class="description last">
+                
+                string: post的字符串数据;
+object: post的json对象，最终会被转化为查询字符串</td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Type</th>
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+    <tbody>
+    
+        <tr>
+            
+            <td class="type">
+            
+                        Promise
+                        
+                    
+            </td>
+            <td class="description last">发送请求的Promise对象</td>
+        </tr>
+    
+    </tbody>
+</table>
+
+    
+    
+    
+        <h5>Example</h5>
+        
+
+    
+    <pre class="prettyprint"><code>// data为字符串调用
+post('http://www.joox.com/cgi', 'lang=en').then(res => {
+    successHandler(res);
+}).catch(error => {
+    failureHandler(error);
+});
+
+// data为对象调用
+post('http://www.joox.com/cgi', {lang: 'en'}).then(res => {
+    successHandler(res);
+}).catch(error => {
+    failureHandler(error);
+});</code></pre>
+    
+
+    
+</dd>
+
+        
+            
+<dt>
+    <div class="nameContainer">
+        <h4 class="name" id="request">
+            
+            request<span class="signature">(url, option)</span><span class="glyphicon glyphicon-circle-arrow-right"></span><span class="type-signature returnType">{Promise}</span>
+        </h4>
+    
+        
+        <div class="tag-source">
+            <a href="ajax_request.js.html">ajax/request.js</a>, <a href="ajax_request.js.html#line4">line 4</a>
+        </div>
+        
+    </div>
+
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        发送ajax请求
+    </div>
+    
+
+    
+    
+    
+    
+    
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>url</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type"><a href="string.html">string</a></span>
+
+
+            
+            </td>
+            
+            
+            
+            <td class="description last">
+                
+                请求的url</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>option</code></td>
             
             
             <td class="type">
@@ -805,7 +1371,7 @@
             
             <td class="description last">
                 
-                json对象</td>
+                请求配置项</td>
         </tr>
 	
 	
@@ -866,11 +1432,11 @@
             
             <td class="type">
             
-                        <a href="string.html">string</a>
+                        Promise
                         
                     
             </td>
-            <td class="description last">json对象转换为querystring字符串</td>
+            <td class="description last">发送请求的Promise对象</td>
         </tr>
     
     </tbody>
@@ -879,150 +1445,48 @@
     
     
     
-</dd>
-
-        
-            
-<dt>
-    <div class="nameContainer">
-        <h4 class="name" id="parseUrl">
-            
-            parseUrl<span class="signature">(url)</span><span class="glyphicon glyphicon-circle-arrow-right"></span><span class="type-signature returnType">{object}</span>
-        </h4>
-    
-        
-        <div class="tag-source">
-            <a href="url_parseUrl.js.html">url/parseUrl.js</a>, <a href="url_parseUrl.js.html#line1">line 1</a>
-        </div>
-        
-    </div>
-
-    
-</dt>
-<dd>
-    
-    
-    <div class="description">
-        解析url
-    </div>
-    
-
-    
-    
-    
-    
-    
+        <h5>Examples</h5>
         
 
-<table class="params">
-    <thead>
-	<tr>
-		
-		<th>Name</th>
-		
-		
-		<th>Type</th>
-		
-		
-		
-		<th class="last">Description</th>
-	</tr>
-	</thead>
-	
-	<tbody>
-	
-	
-        <tr>
-            
-                <td class="name"><code>url</code></td>
-            
-            
-            <td class="type">
-            
-                
-<span class="param-type"><a href="string.html">string</a></span>
-
-
-            
-            </td>
-            
-            
-            
-            <td class="description last">
-                
-                url链接字符串</td>
-        </tr>
-	
-	
-	</tbody>
-</table>
     
-    
-    
-<dl class="details">
-    
-        
-    
-    
-    
-
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-</dl>
-
-    
-    
-
-    
-
-    
-    
-    
-    
-    
-    <h5>Returns:</h5>
+    <pre class="prettyprint"><code>// option配置参数详解
+{
+    method,     // [string] 请求方法，默认为GET，可取值[GET|POST]
+    data,       // [string|object] 请求数据，默认为null
+    headers,    // [object] 要设置的http request header
+    isCache,    // [boolean] 是否需要缓存，false
+    dataType,   // [string] 返回类型，默认为text，可取值[text|json|script]
+}</code></pre>
     
 
 
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Type</th>
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-    <tbody>
     
-        <tr>
-            
-            <td class="type">
-            
-                        object
-                        
-                    
-            </td>
-            <td class="description last">url解析后的json对象</td>
-        </tr>
-    
-    </tbody>
-</table>
+    <pre class="prettyprint"><code>// get调用
+request('http://www.joox.com/cgi', {
+    data: {
+        lang: 'en',
+        area: 'hk',
+    }
+}).then(res => {
+    successHandler(res);
+}).catch(error => {
+    failureHandler(error);
+});
 
+// post调用
+request('http://www.joox.com/cgi', {
+    method: 'POST',
+    data: {
+        lang: 'en',
+        area: 'hk',
+    }
+}).then(res => {
+    successHandler(res);
+}).catch(error => {
+    failureHandler(error);
+});</code></pre>
     
-    
+
     
 </dd>
 

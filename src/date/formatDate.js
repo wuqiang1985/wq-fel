@@ -5,7 +5,7 @@ import pad from '../number/pad';
  * @memberof date
  * @method date#formatDate
  * @param {Date} source 日期对象
- * @param {string} [pattern] 日期格式化模式，默认为yyyy/MM/dd
+ * @param {string} [pattern=yyyy/MM/dd] 日期格式化模式
  * @example
  * <b>格式表达式，变量含义：</b><br><br>
  * hh: 带 0 补齐的两位 12 进制时表示<br>

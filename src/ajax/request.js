@@ -1,28 +1,64 @@
+import jsonToQuery from '../url/jsonToQuery';
+
+
 /**
  * 发送ajax请求
  * @memberof ajax
  * @method ajax#request
- * @param {string} url 发送请求的url
- * @param {Object} options 发送请求的选项参数
- * @config {String} [method] 请求发送的类型，默认为GET
- * @config {String|json} [data] 需要发送的数据
- * @config {Object} [headers] 要设置的http request header
- * @config {Boolean} [isCache] 是否需要缓存，默认为false
- * @config {string} [dataType] 返回类型，默认为text，可选项json，script
+ * @param {string} url 请求的url
+ * @param {object} option 请求配置项
+ * @example
+ * // option配置参数详解
+ * {
+ *     method,     // [string] 请求方法，默认为GET，可取值[GET|POST]
+ *     data,       // [string|object] 请求数据，默认为null
+ *     headers,    // [object] 要设置的http request header
+ *     isCache,    // [boolean] 是否需要缓存，false
+ *     dataType,   // [string] 返回类型，默认为text，可取值[text|json|script]
+ * }
+ * @example
+ * // get调用
+ * request('http://www.joox.com/cgi', {
+ *     data: {
+ *         lang: 'en',
+ *         area: 'hk',
+ *     }
+ * }).then(res => {
+ *     successHandler(res);
+ * }).catch(error => {
+ *     failureHandler(error);
+ * });
+ *
+ * // post调用
+ * request('http://www.joox.com/cgi', {
+ *     method: 'POST',
+ *     data: {
+ *         lang: 'en',
+ *         area: 'hk',
+ *     }
+ * }).then(res => {
+ *     successHandler(res);
+ * }).catch(error => {
+ *     failureHandler(error);
+ * });
  * @returns {Promise} 发送请求的Promise对象
  */
 function request(url, {
     method = 'GET',
-    data,
+    data = null,
     headers,
     isCache = false,
     dataType = 'text',
-}) {
+} = {}) {
     const promise = new Promise((resolve, reject) => {
         const xhr = new XMLHttpRequest();
+        const reqMethod = method.toUpperCase();
         const textHandler = function (resText) {
             let res;
-            switch (dataType) {
+            switch (dataType.toLowerCase()) {
+            case 'text':
+                res = resText;
+                break;
             case 'json':
                 res = JSON.parse(resText);
                 break;
@@ -48,18 +84,30 @@ function request(url, {
                 }
             }
         };
-        let reqUrl = url;
+        const dataHandler = function () {
+            let result = '';
+            if (typeof data === 'string') {
+                result = data;
+            } else if (Object.prototype.toString.call(data) === '[object Object]') {
+                result = jsonToQuery(data);
+            }
 
-        if (method === 'GET') {
-            if (data) {
-                reqUrl += (url.indexOf('?') >= 0 ? '&' : '?') + data;
+            return result;
+        };
+        let reqUrl = url;
+        let reqData = dataHandler();
+
+        if (reqMethod === 'GET') {
+            if (reqData) {
+                reqUrl += (reqUrl.indexOf('?') >= 0 ? '&' : '?') + reqData;
+                reqData = null;
             }
             if (!isCache) {
-                reqUrl += `${url.indexOf('?') >= 0 ? '&' : '?'}WQ_${+new Date()}=1`;
+                reqUrl += `${reqUrl.indexOf('?') >= 0 ? '&' : '?'}WQ_${+new Date()}=1`;
             }
         }
 
-        if (method === 'POST') {
+        if (reqMethod === 'POST') {
             xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
         }
 
@@ -70,8 +118,8 @@ function request(url, {
         }
 
         xhr.onreadystatechange = stateChangeHandler;
-        xhr.open(method, reqUrl, true);
-        xhr.send(data);
+        xhr.open(reqMethod, reqUrl, true);
+        xhr.send(reqData);
     });
 
     return promise;

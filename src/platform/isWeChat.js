@@ -3,8 +3,8 @@
  * @memberof platform
  * @readonly
  * @instance
- * @property {Boolean} isWeChat 是否为微信
- * @returns {Boolean} 是否为微信
+ * @property {boolean} isWeChat 是否为微信
+ * @returns {boolean} 是否为微信
  */
 const isWeChat = /micromessenger/i.test(navigator.userAgent);
 

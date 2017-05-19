@@ -3,7 +3,7 @@
  * @memberof url
  * @method url#getRawParamByUrl
  * @param  {string} name 参数名
- * @param  {string} [url]  页面url，默认取值：location.href
+ * @param  {string} [url=location.href]  页面url
  * @return {string|null} 参数的原始值，为获取到返回null
  */
 function getRawParamByUrl(name, url = location.href) {

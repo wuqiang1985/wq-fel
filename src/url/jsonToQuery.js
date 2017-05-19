@@ -1,8 +1,8 @@
 /**
- * 解析url
+ * 将JSON转化为querystrig形式
  * @memberof url
  * @method url#jsonToQuery
- * @param  {Object} obj json对象
+ * @param  {object} obj json对象
  * @return {string} json对象转换为querystring字符串
  */
 function jsonToQuery(obj) {

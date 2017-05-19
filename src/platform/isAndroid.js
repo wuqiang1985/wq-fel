@@ -3,8 +3,8 @@
  * @memberof platform
  * @readonly
  * @instance
- * @property {Boolean} isAndroid 是否为Android
- * @returns {Boolean} 是否为Android
+ * @property {boolean} isAndroid 是否为Android
+ * @returns {boolean} 是否为Android
  */
 const isAndroid = /iphone/i.test(navigator.userAgent);
 
