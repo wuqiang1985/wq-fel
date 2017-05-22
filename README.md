@@ -29,7 +29,7 @@ encodeHtml('xx');
 
 ## 模块列表
 * [ajax](src/ajax) ajax扩展库
-* [array](src/ajax) array扩展库
+* [array](src/array) array扩展库
 * [cookie](src/cookie) cookie扩展库
 * [date](src/date) 日期扩展库
 * [number](src/number) 数字扩展库
