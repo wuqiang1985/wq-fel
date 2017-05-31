@@ -8,5 +8,3 @@ import unique from './array/getUniqueArray';
 export default {
     unique,
 };
-
-

@@ -11,7 +11,7 @@
   "scripts": {
     "npmpublish": "rimraf ./dist && npm run build:js && npm run copy && cd ./dist && npm publish",
     "build": "npm run clean && npm run lint && npm test && npm run build:js && npm run doc",
-    "build:js":"babel src -d dist",
+    "build:js": "babel src -d dist",
     "lint": "eslint ./src/**/*.js",
     "test:unit": "mocha --compilers js:babel-core/register --recursive",
     "test": "./node_modules/.bin/istanbul cover ./node_modules/mocha/bin/_mocha -- --compilers js:babel-core/register --recursive",
@@ -32,6 +32,7 @@
   "license": "MIT",
   "devDependencies": {
     "babel-cli": "^6.24.1",
+    "babel-plugin-transform-runtime": "^6.23.0",
     "babel-preset-es2015": "^6.24.1",
     "chai": "^3.5.0",
     "coveralls": "^2.13.1",
@@ -45,5 +46,10 @@
     "jsdoc": "^3.4.3",
     "mocha": "^3.2.0",
     "rimraf": "^2.6.1"
+  },
+  "dependencies": {
+    "babel-runtime": "^6.23.0",
+    "balajs": "^1.0.6",
+    "element-closest": "^2.0.2"
   }
 }

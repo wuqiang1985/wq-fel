@@ -13,6 +13,7 @@
         "no-param-reassign": ["error", { "props": false }],
         "no-eval": "off",
         "array-callback-return": "off",
+        "no-new-func": "off",
         "indent": ["error", 4]
     }
 }

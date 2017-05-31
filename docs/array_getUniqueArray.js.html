@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>Source: number/comma.js</title>
+    <title>Source: array/getUniqueArray.js</title>
     
     
     <script src="scripts/prettify/prettify.js"></script>
@@ -353,28 +353,26 @@
     </ul>
 </div>
     <div class="main">
-        <h1 class="page-title" data-filename="number_comma.js.html">Source: number/comma.js</h1>
+        <h1 class="page-title" data-filename="array_getUniqueArray.js.html">Source: array/getUniqueArray.js</h1>
         
 
 
     
     <section>
         <article>
-            <pre id="source-code" class="prettyprint source "><code>/**
- * 为目标数字添加逗号分隔
- * @memberof number
- * @method number#comma
- * @param {number} source 需要处理的数字
- * @param {number} [length=3] 两次逗号之间的数字位数
- * @returns {string} 添加逗号分隔后的字符串
+            <pre id="source-code" class="prettyprint source "><code>
+/**
+ * 过滤数组，等到数组内唯一值
+ * @memberof array
+ * @method array#getUniqueArray
+ * @param {array} arr 待过滤的数组
+ * @returns {array} 过滤后唯一值的数组
  */
-function comma(source, length = 3) {
-    const num = String(source).split('.');
-    num[0] = num[0].replace(new RegExp(`(\\d)(?=(\\d{${length}})+$)`, 'ig'), '$1,');
-    return num.join('.');
+function getUniqueArray(arr) {
+    return new Set(...arr);
 }
 
-export default comma;
+export default getUniqueArray;
 </code></pre>
         </article>
     </section>
