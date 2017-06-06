@@ -3,10 +3,12 @@
  * @namespace string
  */
 
-import encodeHtml from './string/encodeHtml';
 import decodeHtml from './string/decodeHtml';
+import encodeHtml from './string/encodeHtml';
+import getUUID from './string/getUUID';
 
 export default {
-    encodeHtml,
     decodeHtml,
+    encodeHtml,
+    getUUID,
 };

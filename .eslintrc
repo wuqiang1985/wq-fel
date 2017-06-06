@@ -14,6 +14,7 @@
         "no-eval": "off",
         "array-callback-return": "off",
         "no-new-func": "off",
+        "no-bitwise": "off",
         "indent": ["error", 4]
     }
 }
